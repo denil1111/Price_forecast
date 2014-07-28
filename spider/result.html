@@ -1,0 +1,941 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    
+    
+ 
+  
+
+  
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    
+      <title>Flights - China Eastern Airlines</title>
+      <meta http-equiv="pragma" content="no-cache"/>
+      <meta http-equiv="cache-control" content="no-cache" />
+      <meta name="keywords" content="China Eastern airline,discount,special offer,ticket,fare,book online,cheap fare,china,shanghai,beijing,guangzhou,hongkong," />
+      <meta name="description" content="China Eastern Airlines offer flights from Europe to over one hundred China destinations as well as onward destinations in Asia and Australia." />
+      <link type="image/x-icon" href="/muovc/resource/images/favicon.ico" rel="Shortcut Icon" />
+      <link type="text/css" href="/muovc/resource/css/main.css" rel="stylesheet" />
+      <link type="text/css" href="/muovc/resource/css/new-main.css" rel="stylesheet" />
+      <link type="text/css" href="/muovc/resource/en_US/css/css.css" rel="stylesheet" />
+      <link type="text/css" href="/muovc/resource/css/flightbooking.css" rel="stylesheet" />
+      <link type="text/css" href="/muovc/resource/css/selectcity.css" rel="stylesheet" />
+<link type="text/css" href="/muovc/resource/css/supplement.css" rel="stylesheet" />
+<script type='text/javascript' src='/muovc/dwr/interface/FlightDwrUtil.js'></script>
+<script type="text/javascript" src="/muovc/resource/js/jquery/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="/muovc/resource/en_US/js/city.js"></script>
+<script type="text/javascript" src="/muovc/resource/js/main.js"></script>
+<script type='text/javascript' src='/muovc/resource/js/j.index.js'></script>
+
+
+      <script type="text/javascript" src="/muovc/resource/js/booking/j.tax.flightselect.js"></script>
+      <script type="text/javascript" src="/muovc/resource/js/public/jquery.calendar.js"></script>
+      <script type="text/javascript" src="/muovc/resource/js/booking/j.calendar.selectflight.js"></script>
+      <script type="text/javascript" src="/muovc/resource/js/public/jquery.sortr.js"></script>
+      <script type="text/javascript">
+      $(function()
+      {
+          $('.calendar').calendar({'Currency':'$','dep':'JFK','arr':'BHY','CurrencyCode':'USD'});
+          $('.calendar').calendarSelectflight({
+            'action':'/muovc/front/reservation/flight-search!doFlightSearchForAjax.shtml',
+            'replace':'.flight_table',
+            'depCode':'JFK',
+            'arrCode':'BHY',
+            'tripType':'OW',
+            'cabinRank':'ECONOMY'
+          });
+          $('.btn_sort_time').sortr({'selectr':'.flight_table tbody','sortkey':'.sort_time'});
+          $('.btn_sort_fare').sortr({'selectr':'.flight_table tbody','sortkey':'.sort_fare'});
+          
+          $("#popup_price .cabin").find("input[type='radio']").live('click',function(){
+      $("#price_info").show();
+      });
+    
+      $("#popup_price .close,#popup_price input[name='back'],.body_mask").live('click',function(){
+      $(".body_mask,.popup_iframe,#popup_price").remove();
+    });
+      });
+      function allPrice(flightSeq){
+      var sMask_Width = $(window).width();
+      var sLeft = (sMask_Width/2)-330;
+      
+      //载入遮罩
+      $("body").append("<div class='body_mask'></div>");
+      $('.body_mask').css({
+        'width' : $('body').width(),
+        'height' : $('body').height()
+      });
+      $('html,body').animate({scrollTop: 0}, 500);
+      
+      //载入iframe,兼容IE6
+      $("body").append($('<iframe class="popup_iframe"></iframe>'));
+      
+      //载入loading
+      $('body').append($('<div id="popup_price"><div class="close"></div></div>'));
+      $("#popup_price").append($('<div class="imgLoading" style="text-align:center; padding:50px 0"><img src="/muovc/resource/images/loading2.gif"></div>'));
+      
+      //显示弹出窗
+      $("#popup_price").css("left",sLeft+"px");
+      $("#popup_price").show();
+      
+      $.ajax({
+              type: 'GET',
+              url: '/muovc/front/reservation/flight-search!doOWSearchForAllPrice.shtml?flightSeq=' + flightSeq + '&updates=' + Math.random(),
+              success: function(data)
+              {
+          $('div.imgLoading').remove();
+                if($('#flightListForm2').size()<1){
+                  $("#popup_price").append(data);
+                }else{
+                  $('#flightListForm2').remove();
+                  $("#popup_price").append(data);
+                }
+          
+          //无内容不显示
+                $('.cabin ul').each(function(){
+                  if($(this).children('li').size()<1){
+                    $(this).parent('.cabin').hide();
+                  }
+                });
+          //end
+          
+                  if(typeof callback != 'undefined')
+                  {
+                      callback();
+                  }
+              }
+          });
+    }
+      var resource = {
+          'page':{
+            'flight':{
+              'error':{
+                 'select':{
+                      'outbound':{'notselected':'Please choose flight(s) for your outbound trip'},
+                      'inbound':{'notselected':'Please choose flight(s) for your inbound trip'},
+                      'notselected':'Please choose flight(s) for your trip',
+                      'securitycode':'Please Input security code',
+                      'seccodenotmatch':'Security code not match',
+                      'notselectgo':'Please select outbound and inbound flights for viewing more flight information.'
+                  }
+               }
+            }
+          }
+     };
+    </script>
+    
+  </head>
+  <body>
+    <div id="container">
+    <div id="background">
+     <div id="main">
+        
+          <div id="header"></div>
+          <script type="text/javascript">Shared.include('#header','/muovc/public/header.html',function(){Shared.menuPosition('#flights')})</script>
+          <div id="content">
+            <div class="col_left">
+              
+<script type="text/javascript" src="/muovc/resource/js/My97Date/WdatePicker.js"></script>
+<script>
+$("#idSlider").livequery(function(){
+  var nums = [], timer, n = $$("idSlider").getElementsByTagName("li").length,
+    st = new SlideTrans("idContainer", "idSlider", n, {
+      onStart: function(){//设置按钮样式
+        forEach(nums, function(o, i){ o.className = st.Index == i ? "on2" : ""; });
+      }
+    });
+  for(var i = 1; i <= n; AddNum(i++)){};
+  function AddNum(i){
+    var num = $$("idNum").appendChild(document.createElement("li"));
+    num.innerHTML = i--;
+    num.onmouseover = function(){
+      timer = setTimeout(function(){ num.className = "on2"; st.Auto = false; st.Run(i); }, 200);
+    };
+    num.onmouseout = function(){ clearTimeout(timer); num.className = ""; st.Auto = true; st.Run(); };
+    nums[i] = num;
+  };
+  st.Run();
+});
+  
+ </script>
+<div class="flight_search">
+  <div class="head">
+    <ul>
+      <li tips="flights_body">
+        <b>Flights </b>
+        <span></span>
+      </li>
+      <li tips="my_booking_body">
+        <b>My Order </b>
+        <span></span>
+      </li>
+    </ul>
+    <div class="flights"></div>
+    <div class="my_booking"></div>
+  </div>
+  <div class="body">
+    <div id="flights_body" class="content_body">
+      <form name="flight_search_home" method="get" action="/muovc/main/en_US/flights/loading.html">
+        <div class="input_field">
+          
+            
+              <div class="radio">
+                <input type="radio" name="cond.tripType" id="radio_domestic" value="RT" />
+                <label for="radio_domestic">
+                  Round Trip
+                </label>
+                <input type="radio" name="cond.tripType" id="radio_one_way" value="OW" checked />
+                <label for="radio_one_way">
+                  One way
+                </label>
+              </div>
+            
+            
+          
+          <div class="row">
+            <div class="col1">
+              From
+            </div>
+            <div class="col2">
+              <input type="text" name="cond.depCode" value="JFK" class="input" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col1">
+              To
+            </div>
+            <div class="col2">
+              <input type="text" name="cond.arrCode" value="BHY" class="input" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col1">
+              Depart
+            </div>
+            <div class="dateBox">
+        <input class="Wdate" type="text" name="depDate"  value="2014-07-29" readonly="readonly" onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',skin:'default',minDate:'%y-%M-%d',lang:'en_US'})"/>
+      </div>
+          </div>
+          <div class="row">
+            <div class="col1">
+              Return
+            </div>
+            <div class="dateBox">
+        <input id="input_return_date" class="Wdate" type="text" name="depRtDate" value="" readonly="readonly" onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd',skin:'default',minDate:'%y-%M-%d',lang:'en_US'})"/>
+        </div>
+          </div>
+          <!--  
+          <div class="row">
+            <div class="col1">
+              Class
+            </div>
+            <div class="col2">
+              <select name="cond.cabinRank" class="select" select="ECONOMY" id="Select" style="display: none;">
+                <option value="ECONOMY">
+                  Economy
+                </option>
+                <option value="BUSINESS">
+                  Business
+                </option>
+                <option value="FIRST">
+                  First
+                </option>
+              </select>
+            </div>
+          </div> -->
+        </div>
+        <div class="submit_field">
+          <input type="submit" name="submit" value="Book Now" />
+        </div>
+      </form>
+    </div>
+    <div id="my_booking_body" class="content_body">
+      <form name="form_my_booking" id="form_my_booking" action="/muovc/front/order/order!queryOrdersWithNoLogin.shtml" method="post">
+        <div class="input_field_2">
+          <!-- 目前只有一个选项，不需要添加radio  modified by xingxin 20110215 -->
+          <!--  
+          <div class="radio">
+            <input type="radio" name="radio_my_booking" id="manage_my_booking" checked />
+            <label for="manage_my_booking">
+             Manage My Booking
+            </label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="radio_my_booking" id="checkin_online" />
+            <label for="checkin_online">
+              Check In Online
+            </label>
+          </div>
+          -->
+          <div class="line"></div>
+          <div class="row">
+            <div class="col1">
+              Order No.
+            </div>
+            <div class="col2">
+              <input type="text" id="ordNo" name="cond.orderInfoValue" class="input" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col1">
+              Passport Number
+            </div>
+            <div class="col2">
+              <input type="text" id="idNo" name="cond.personInfoValue" class="input" />
+            </div>
+          </div>
+        </div>
+        <div class="submit_field">
+          <input type="button" value="Go" id="manageOrderButton" name="manageOrderButton" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="MainPromotionBanner">
+  <div class="container2" id="idContainer">
+    <ul id="idSlider">
+      <li><a target="_blank" href="/muovc/main/en_US/Static_pages/Destination_Shanghai.html"><img src="/muovc/resource/en_US/images/ad001.jpg"> </a></li>
+    </ul>
+    <ul class="num" id="idNum">
+    </ul>
+   </div>
+</div>
+<div class="adv">
+ <img src="/muovc/resource/en_US/images/img_europe_trip_180.jpg" />
+</div>
+
+
+<script type="text/javascript">
+  $(function()
+  {
+     $('.flight_search .content_body input[name=cond.depCode]').selectcity({mode:'dep',arr:'.flight_search .content_body input[name=cond.arrCode]',hot:true});
+     $('.flight_search .content_body input[name=cond.arrCode]').selectcity({mode:'arr',dep:'.flight_search .content_body input[name=cond.depCode]'});
+     
+     $("#manageOrderButton").click(function(){
+       var ordNo = $.trim($("#ordNo").val());
+       var idNo = $.trim($("#idNo").val());
+       if((ordNo=="") || (idNo=="")){
+         return false;
+       }else{
+         $("#idNo").val(idNo);
+         $("#ordNo").val(ordNo)
+         $("#form_my_booking").submit();
+       }
+     });
+        $('#Select').change(function()
+    {
+        $('#Select').css("display","block");
+    }).change();
+  });
+  
+ </script>
+
+ 
+
+            </div>
+            <div class="col_right">
+              <div class="flight_step2"></div>
+              <div class="flight_booking">
+                <div class="routing">
+                  <span>Select Departing Flight: </span>
+                    NEW YORK JOHN F KENNEDY
+                    <img src="/muovc/resource/images/icon_arrow_go.gif" />
+                    Beihai
+            <div class="orderby">
+              <div class="text">
+                Time
+                &nbsp;
+                Fare
+              </div>
+              <div class="order_icon">
+                <span class="btn_sort_time" title="Sort Time"></span>
+                <span class="btn_sort_fare" title="Sort fare"></span>
+              </div>
+            </div>
+                </div>
+                <div class="head">
+                  
+
+ 
+  
+
+  
+
+
+
+
+<!-- 供日历调用 -->
+<span id="calendarSite" style="display: none">en_US</span>
+<span id="calendarPath" style="display: none">/muovc</span>
+<div class="calendar">
+ <ul>
+  
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-07-26</span><span>Jul.26</span><span>Sat</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-07-27</span><span>Jul.27</span><span>Sun</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-07-28</span><span>Jul.28</span><span>Mon</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+   
+    
+     <li class="active">
+      <a><span class="selectDate" style="display: none">2014-07-29</span><span>Jul.29</span><span>Tue</span> 
+        
+        
+         <b>$1,531.8</b>
+        
+        </a>
+     </li>
+    
+    
+   
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-07-30</span><span>Jul.30</span><span>Wed</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-07-31</span><span>Jul.31</span><span>Thu</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+   
+    
+    
+     <li>
+      <a><span class="selectDate" style="display: none">2014-08-01</span><span>Aug.01</span><span>Fri</span> 
+        
+         <b> - </b>
+        
+        
+        </a>
+     </li>
+    
+   
+  
+ </ul>
+</div>
+                  
+                </div>
+                <div class="body">
+                  <form name="form_flight_booking" id="flightListForm" action="/muovc/front/reservation/flight-select!ow.shtml" method="post">
+                    <div class="flight_table ow">
+                      
+
+ 
+  
+
+  
+
+
+
+
+
+  <table cellpadding="0" cellspacing="1" class="booking_table">
+    <col width="20" />
+    <col width="115" />
+    <col width="115" />
+    <col width="70" />
+    <col width="90" />
+    <col width="90" />
+    <col width="100" />
+    <col width="100" />
+    <col width="" />
+    <thead>
+      <tr>
+        <td>
+        </td>
+        <td>
+          Depart
+        </td>
+        <td>
+          Arrive
+        </td>
+        <td>
+          Flight
+        </td>
+        <td>
+          From
+        </td>
+        <td>
+          To
+        </td>
+        <td>
+          Economy Price
+        </td>
+        <td>
+          Lowest Price
+        </td>
+        <td></td>
+      </tr>
+    </thead>
+    
+    
+      <tbody>
+        
+        
+          
+            
+            
+              <tr class="booking">
+                <td rowspan="2" class="icon">
+                  <img src="/muovc/resource/images/icon_flight_depart.gif" />
+                   <span class="sort_fare hidden">1280.0</span>
+                  <span class="sort_time hidden">16:25</span>
+                </td>
+                
+                <td>
+                  <img src="/muovc/resource/images/icon_time_blue.gif" />
+                  16:25 Jul.29
+                </td>
+                <td>
+                  <img src="/muovc/resource/images/icon_time_red.gif" />
+                  19:15 Jul.30
+                </td>
+                <td>
+                  <!-- 区分是飞机还是高铁的图标 -->
+                  
+                    
+                    
+                      <img src="/muovc/resource/images/icon_logo_cea.gif" />
+                    
+                  
+                  MU588
+                </td>
+                <td>
+                  NEW YORK JOHN F KENNEDY
+
+                </td>
+                <td>
+                  Shanghai Pu Dong Airport
+
+                </td>
+                
+                <td rowspan="2" class="price center">
+                    
+                       
+                       
+                           <span> - </span>
+                       
+                    
+                 </td>
+                 
+                 <td rowspan="2" class="price center">
+                    
+                       
+                          <input type="radio" name="flight_select" value="0|K-B|LOW"/>$<span class="price">1,531.8</span>
+                          
+
+                          <!-- 票价和税等等隐藏信息 -->
+                          
+
+
+   
+   
+
+   
+   
+
+   
+   
+
+   
+   
+     
+   
+
+   
+   
+
+
+  
+  
+    <span class="tkt_amt" style="display:none">1,280</span>
+    <span class="tax_amt" style="display:none">251.8</span>
+  
+
+  
+                       
+                       
+                    
+                    </td>
+               <td rowspan="2">
+                <span class="more popup_price_detail" onclick="allPrice(0)">more</span>
+               </td>
+              </tr>
+            
+            
+            
+          
+        
+          
+            
+            
+            
+            
+              <tr class="booking">
+                
+                <td>
+                  <img src="/muovc/resource/images/icon_time_blue.gif" />
+                  17:00 Jul.31
+                </td>
+                <td>
+                  <img src="/muovc/resource/images/icon_time_red.gif" />
+                  19:45 Jul.31
+                </td>
+                <td>
+                  <!-- 区分是飞机还是高铁的图标 -->
+                  
+                    
+                    
+                      <img src="/muovc/resource/images/icon_logo_cea.gif" />
+                    
+                  
+                  MU5265
+                </td>
+                <td>
+                  Shanghai Pu Dong Airport
+
+                </td>
+                <td>
+                  Beihai
+
+                </td>
+              </tr>
+            
+          
+        
+        <tr class="detail">
+          <td colspan="10">
+            
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+      
+      
+  
+  
+  
+   <!-- 普通价行礼额 -->
+   
+   
+   <!-- 最低价行礼额 -->
+   
+  
+     
+       
+  
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        NEW YORK
+
+        ,
+        UNITED STATES
+
+        -
+        NEW YORK JOHN F KENNEDY
+
+        T1
+      </li>
+      <li>
+        To
+        :
+        SHANGHAI
+
+        ,
+        CHINA
+
+        -
+        Shanghai Pu Dong Airport
+
+        T1
+      </li>
+      <li>
+        Aircraft
+        :
+        346
+      </li>
+      <li>
+        Stopover : no
+      </li>
+      <li>
+      
+          
+          
+            Class
+               <span class="Economy"><strong>K</strong></span><span class="Lowest"><strong>K</strong></span>
+          
+          
+          
+        
+      </li>
+    </ul>
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        SHANGHAI
+
+        ,
+        CHINA
+
+        -
+        Shanghai Pu Dong Airport
+
+        T1
+      </li>
+      <li>
+        To
+        :
+        BEIHAI
+
+        ,
+        CHINA
+
+        -
+        Beihai
+
+        --
+      </li>
+      <li>
+        Aircraft
+        :
+        320
+      </li>
+      <li>
+        Stopover : no
+      </li>
+      <li>
+      
+          
+          
+          
+          
+            Class
+               <span class="Economy"><strong>B</strong></span><span class="Lowest"><strong>B</strong></span>
+          
+        
+      </li>
+    </ul>
+  
+  <ul>
+  <li>
+    Free baggage allowance
+    <span class="Economy"><strong></strong></span>
+    <span class="Lowest"><strong>2PC</strong></span>
+  </li>
+  </ul>
+  <ul>
+    <li>
+      Total time:
+      38hours 20minutes
+    </li>
+  </ul>
+  <ul>
+   <li>
+     <span class="Economy"><strong>Maximum Stay is 12month(s)。Passenger tickets are non-endorsable,When changing tickets within the validity period,a fee of USD129.00 will be charged, regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused) should be applied for refund within 13 months from the date of ticket issuing,a fee of USD129.00 will be charged as refund fee,  late application is not allowed.</strong></span><span class="Lowest"><strong>Maximum Stay is 12month(s)。Passenger tickets are non-endorsable,When changing tickets within the validity period,a fee of USD129.00 will be charged, regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused) should be applied for refund within 13 months from the date of ticket issuing,a fee of USD129.00 will be charged as refund fee,  late application is not allowed.</strong></span>
+   </li>
+  </ul>
+  <!-- 入藏注意事项 -->
+  <!-- 取得是否从日本出发的判断条件的值 -->
+  
+  
+
+          </td>
+        </tr>
+      </tbody>
+    
+    
+  </table>
+
+                    </div>
+                    <!-- 票价和税信息 -->
+                    <div id="total_price_div" style="display: none" class="flight_price priceHasTax">
+  <div class="clear"></div>
+  <ul class="hasTaxPrice">
+    <li>
+      <span id="total_tkt_amt" rel="total_tkt_amt"  ></span>
+    </li>
+    
+    <li class="taxLine">
+      <span id="total_tax_amt" rel="total_tax_amt"  ></span>&nbsp;<a href="javascript:void(0)" rel="show_ow_tax" style="font-weight:normal;">(?)</a>
+    </li>
+    <li>  
+      <span id="total_price" rel="total_price"></span>
+    </li>
+  </ul>
+  <ul class="hasTaxMsg"  >
+    <li>Fare: $</li>
+    
+    <li class="taxLine"><label>+</label>Tax & Fees: $</li>
+    <li>Total Fare: $</li>
+  </ul>
+  <!-- <ul class="hasTaxPrice">
+    <li>
+      <span id="total_tkt_amt" rel="total_tkt_amt"></span>
+    </li>
+    
+    <li class="taxLine">
+      <span id="total_tax_amt" rel="total_tax_amt"></span>&nbsp;<a href="javascript:void(0)" rel="show_ow_tax">(?)</a>
+    </li>
+    <li>  
+      <span id="total_price" rel="total_price"></span>
+    </li>
+  </ul>
+  <ul class="hasTaxMsg">
+    <li>Fare: $</li>
+    
+    <li class="taxLine"><label>+</label>Tax & Fees: $</li>
+    <li>Total Fare: $</li>
+  </ul> -->
+  <div class="clear"></div>
+</div>
+<input type="hidden" id="total_currency" value="USD">
+                    <div>
+                    
+                    
+                      <div class="flight_footer">
+                        Security Code:
+                        <input type="text" id="security_code" name="security_code" class="input" />
+                        <img id="_code" src="/muovc/jcaptcha.servlet" height='20' width='40' />
+                        <span class="refresh"> <a href="javascript:changeCode()"> Refresh </a> </span>
+                      </div>
+                    
+                    <div class="flight_btn">
+                      <div class="back">
+                        <input type="button" name="back" value=Back onclick="javascript:history.back()" />
+                      </div>
+                      <div class="continue">
+                        <input type="button" name="continue" id="owSelectSubmit" value=BookNext />
+                      </div>
+                    </div>
+                    </div>
+                  </form>
+                </div>
+                
+                <div class="foot">
+ <h3>
+  Important Fare & Schedule Information
+ </h3>
+ <p>
+  <img src="/muovc/resource/images/code_share.gif" />
+  <span>The icon means <a target=_blank href="/muovc/main/en_US/Static_pages/Share_flights.html">code-share flight</a>.</span>
+ </p>
+ <!-- p>
+  <img src="/muovc/resource/images/icon_logo_trn.gif" />
+  <span>This icon means high-speed rail,ths carrier is <a href="http://www.12306.cn/mormhweb/" target="_blank">China high-speed rail</a> .</span>
+ </p -->
+ <p>
+  <span>* Fare including fuel,airport tax and other tax.  </span>
+ </p>
+ <p>
+  <span>* Specific rules and restrictions may apply. Please read the <a target=_blank href="/muovc/main/en_US/Static_pages/farerules.htm">Fare Rules</a>. </span>
+ </p>
+ <p>
+  <span>* Charges may apply on any refunds / rebooking as per <a target=_blank href="/muovc/main/en_US/Static_pages/farerules.htm">Fare Rules</a>.
+  When a ticket is booked on US.CEAIR.COM, the reservation can be cancelled free of charge within twenty-four hours, provided that the reservation is made one week or more before the flight’s departure.
+  </span>
+ </p>
+  <p>
+  <span  style="text-decoration:underline">* Additional fees for baggage may apply, please read Baggage & other Optional Fees or contact our service center for details.</span>
+ </p>
+ <p>
+  <span>* Flight departing within 24 hours can not be booked online.</span><a target=_blank href="/muovc/main/en_US/Static_pages/Contact.html"> Service Centre»</a>
+ </p>
+ <P>
+  <span>* Prices for fares are shown in USA dollars but will be converted to Chinese Yuan upon completion of a booking. Accordingly, you may be charged a conversion fee or other transaction costs by your bank or credit card supplier. Please check with your banking institution for details of any such fees or costs.</span>
+ </P>
+</div>
+              </div>
+            </div>
+          </div>
+          <div id="footer"></div>
+          <script type="text/javascript">Shared.include('#footer','/muovc/public/footer.html')</script>
+        
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
