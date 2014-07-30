@@ -11,8 +11,8 @@ class DmozSpider(scrapy.Spider):
         'cond.tripType':'OW',
         'cond.depCode_reveal':'JFK',
         'cond.depCode':'JFK',
-        'cond.arrCode_reveal':'BHY',
-        'cond.arrCode':'BHY',
+        'cond.arrCode_reveal':'SHA',
+        'cond.arrCode':'SHA',
         'cond.routeType':'3',
         'depDate':'2014-07-29',
         'depRtData':'2014-8-26',
@@ -24,13 +24,17 @@ class DmozSpider(scrapy.Spider):
     def logged_in(self, response):
         print 1
         print response.url
-        from scrapy.shell import inspect_response
-        inspect_response(response)
+        for sel in response.xpath('//body'):
+            item = DmozItem()
+            item['price']=sel.xpath('//b').extract()
+            yield item
+        # from scrapy.shell import inspect_response
+        # inspect_response(response)
         # here you would extract links to follow and return Requests for
         # each of them, with another callback
         pass
     name = "dmoz"
-    # allowed_domains = ["flights.ctrip.com"]
+    allowed_domains = ["us.ceair.com"]
     # start_urls = [
     #     "http://flights.ctrip.com/"
     # ]
