@@ -9,4 +9,5 @@ def AirportData():
 		data=json.loads(line[:-2])
 		if (data['name']!=[]):
 			datas.append(data)
+	print len(datas)
 	return datas

@@ -16,4 +16,5 @@ crawler.start()
 log.start()
 reactor.run()
 item=DmozItem()
-print item['price']
+print item
+print 1
