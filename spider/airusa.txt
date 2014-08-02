@@ -1,0 +1,9 @@
+{"code":"LAX","chname":"洛杉矶国际机场","name":"Los Angeles","state":"加利福尼亚"}
+{"code":"BUR","chname":"伯班克机场","name":"Burbank","state":"加利福尼亚"}
+{"code":"ONT","chname":"安大略机场","name":"Ontario","state":"加利福尼亚"}
+{"code":"LGB","chname":"长滩机场","name":"Long Beach","state":"加利福尼亚"}
+{"code":"SAN","chname":"圣地亚哥机场","name":"San Diego","state":"加利福尼亚"}
+{"code":"SNA","chname":"橙县机场","name":"Orange County","state":"加利福尼亚"}
+{"code":"SFO","chname":"旧金山国际机场","name":"San Francisco","state":"加利福尼亚"}
+{"code":"OAK","chname":"奥克兰机场","name":"Oakland","state":"加利福尼亚"}
+{"code":"SJC","chname":"圣荷西机场","name":"San Jose","state":"加利福尼亚"}

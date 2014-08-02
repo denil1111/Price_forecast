@@ -3,7 +3,7 @@ import scrapy
 from spider.items import DmozItem
 from datahandle import AirData
 
-class DmozSpider(scrapy.Spider):
+class BingSpider(scrapy.Spider):
     def start_requests(self):
         # cityname1=u'上海'
         # cityname2=u'广州'
@@ -26,7 +26,7 @@ class DmozSpider(scrapy.Spider):
             }
             print('========================================')
             print (formdata)
-            yield scrapy.FormRequest("http://us.ceair.com/muovc/front/reservation/flight-search!doFlightSearch.shtml",
+            yield scrapy.FormRequest("http://www.bing.com/flights/search",
                             formdata=formdata,
                             callback=self.logged_in,
                             dont_filter=True)
@@ -42,8 +42,8 @@ class DmozSpider(scrapy.Spider):
         # inspect_response(response)
         # here you would extract links to follow and return Requests for
         # each of them, with another callback
-    name = "dmoz"
-    allowed_domains = ["us.ceair.com"]
+    name = "bing"
+    allowed_domains = ["www.bing.com"]
     # start_urls = [
     #     "http://flights.ctrip.com/"
     # ]

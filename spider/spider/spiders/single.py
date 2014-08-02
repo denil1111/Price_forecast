@@ -1,26 +1,26 @@
 import scrapy
 from spider.items import DmozItem
 from datahandle import AirData
-class kawSpider(scrapy.Spider):
-    name = "kaw"
+class kawSpidersingle(scrapy.Spider):
+    name = "kawsi"
     DOWNLOAD_DELAY = 2
     # start_urls=[]
     def start_requests(self):
-        a=AirData()
-        datas=a.UsaData()
-
+        # a=AirData()
+        # datas=a.UsaData()
+        yield scrapy.FormRequest('http://www.kayak.com/flights/LGB-BUR/2014-08-16',callback=self.ress)
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[2]['code']+'/2014-08-26')    
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[3]['code']+'/2014-08-26')    
-        for i in range(16,33):
-            date='/2014-08-'+str(i)
-            if (i==32):
-                date='/2014-09-01'
-            for info1 in datas:
-                for info2 in datas:
-                    if (info1!=info2):
-                        yield scrapy.FormRequest('http://www.kayak.com/flights/'+info1['code']+'-'+info2['code']+date,
-                                                callback=self.ress
-                                            )
+        # for i in range(16,33):
+        #     date='/2014-08-'+str(i)
+        #     if (i==32):
+        #         date='/2014-09-01'
+        #     for info1 in datas:
+        #         for info2 in datas:
+        #             if (info1!=info2):
+        #                 yield scrapy.FormRequest('http://www.kayak.com/flights/'+info1['code']+'-'+info2['code']+date,
+        #                                         callback=self.ress
+        #                                     )
                     
                     # print start_urls
                     # start_urls.append('http://www.kayak.com/flights/'+info1['code']+'-'+info2['code']+'/2014-08-26')     

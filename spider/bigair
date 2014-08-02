@@ -1,0 +1,60 @@
+{"code":"LAX","chname":"洛杉矶国际机场","name":"Los Angeles","state":"加利福尼亚"}
+{"code":"BUR","chname":"伯班克机场","name":"Burbank","state":"加利福尼亚"}
+{"code":"ONT","chname":"安大略机场","name":"Ontario","state":"加利福尼亚"}
+{"code":"LGB","chname":"长滩机场","name":"Long Beach","state":"加利福尼亚"}
+{"code":"SAN","chname":"圣地亚哥机场","name":"San Diego","state":"加利福尼亚"}
+{"code":"SNA","chname":"橙县机场","name":"Orange County","state":"加利福尼亚"}
+{"code":"SFO","chname":"旧金山国际机场","name":"San Francisco","state":"加利福尼亚"}
+{"code":"OAK","chname":"奥克兰机场","name":"Oakland","state":"加利福尼亚"}
+{"code":"SJC","chname":"圣荷西机场","name":"San Jose","state":"加利福尼亚"}
+{"code":"SEA","chname":"西雅图国际机场","name":"Seattle","state":"华盛顿"}
+{"code":"PDX","chname":"波特兰机场","name":"Portland","state":"俄勒冈"}
+{"code":"PHX","chname":"凤凰城机场","name":"Phoenix","state":"亚利桑那"}
+{"code":"TUS","chname":"图森机场","name":"Tueson","state":"亚利桑那"}
+{"code":"LAS","chname":"拉斯维加斯机场","name":"Las Vegas","state":"内华达"}
+{"code":"RNO","chname":"雷诺机场","name":"Reno","state":"内华达"}
+{"code":"SLC","chname":"盐湖城机场","name":"Salt Lake City","state":"犹他"}
+{"code":"DEN","chname":"丹佛机场","name":"Denver","state":"科罗拉多"}
+{"code":"ELP","chname":"埃尔.帕索机场","name":"El Paso","state":"得克萨斯"}
+{"code":"SAT","chname":"圣.安东尼奥机场","name":"San Antonio","state":"得克萨斯"}
+{"code":"AUS","chname":"奥斯汀机场","name":"Austin","state":"得克萨斯"}
+{"code":"IAH","chname":"休斯顿国际机场","name":"Houston(Int’l)","state":"得克萨斯"}
+{"code":"HOU","chname":"休斯顿哈比机场","name":"Houston(Hobby)","state":"得克萨斯"}
+{"code":"DFW","chname":"达拉斯机场","name":"Dallas","state":"得克萨斯"}
+{"code":"MSP","chname":"明尼阿波利斯机场","name":"Minneapolis","state":"明尼苏达"}
+{"code":"MCI","chname":"堪萨斯城机场","name":"Kansas","state":"密苏里"}
+{"code":"STL","chname":"圣.路易斯机场","name":"St. Louis","state":"密苏里"}
+{"code":"MSY","chname":"新奥尔良机场","name":"New Orleans","state":"路易斯安那"}
+{"code":"BHM","chname":"伯明翰机场","name":"Birmingham","state":"阿拉巴马"}
+{"code":"MEM","chname":"孟菲斯机场","name":"Memphis","state":"田纳西"}
+{"code":"BNA","chname":"纳什维尔机场","name":"Nashville","state":"田纳西"}
+{"code":"ORD","chname":"芝加哥机场","name":"Chicago","state":"依利诺"}
+{"code":"DTW","chname":"底特律机场","name":"Detroit","state":"密执安"}
+{"code":"IND","chname":"印第安那波利斯","name":"Indianapolis","state":"印第安那"}
+{"code":"CVG","chname":"辛辛那提机场","name":"Cincinnati","state":"俄亥俄"}
+{"code":"DAY","chname":"代顿机场","name":"Dayton","state":"俄亥俄"}
+{"code":"CMH","chname":"哥伦布机场","name":"Columbus","state":"俄亥俄"}
+{"code":"CLE","chname":"克利夫兰机场","name":"Cleveland","state":"俄亥俄"}
+{"code":"PWM","chname":"波特兰机场","name":"Portland","state":"缅因"}
+{"code":"BOS","chname":"波士顿机场","name":"Boston","state":"马萨诸塞"}
+{"code":"ISP","chname":"长岛机场","name":"Long Island","state":"纽约"}
+{"code":"LGA","chname":"拉瓜地机场","name":"La Guardia","state":"纽约"}
+{"code":"JFK","chname":"肯尼迪机场","name":"John F Kennedy","state":"纽约"}
+{"code":"ALB","chname":"奥尔巴尼机场","name":"Albany","state":"纽约"}
+{"code":"BUF","chname":"布法罗机场","name":"Buffalo","state":"纽约"}
+{"code":"EWR","chname":"纽瓦克机场","name":"Newark","state":"新泽西"}
+{"code":"PIT","chname":"匹兹堡机场","name":"Pittsburgh","state":"宾夕法尼亚"}
+{"code":"PHL","chname":"费城机场","name":"Philadelphia","state":"宾夕法尼亚"}
+{"code":"DCA","chname":"华盛顿国际机场","name":"National","state":"哥伦比亚特区"}
+{"code":"BWI","chname":"巴尔地磨机场","name":"Baltimore","state":"马里兰"}
+{"code":"IAD","chname":"华盛顿达拉斯机场","name":"Wa Dulles","state":"弗吉尼亚"}
+{"code":"CLT","chname":"夏洛特机场","name":"Charlotte","state":"北卡罗来纳"}
+{"code":"ILM","chname":"威尔明顿机场","name":"Wilmington","state":"北卡罗来纳"}
+{"code":"CAE","chname":"哥伦比亚机场","name":"Columbia","state":"南卡罗来纳"}
+{"code":"CHS","chname":"查尔斯顿机场","name":"Charleston","state":"南卡罗来纳"}
+{"code":"ATL","chname":"亚特兰大机场","name":"Atlanta","state":"佐治亚"}
+{"code":"MCO","chname":"奥兰多机场","name":"Orlando","state":"佛罗里达"}
+{"code":"TPA","chname":"坦帕机场","name":"Tampa","state":"佛罗里达"}
+{"code":"MIA","chname":"迈阿密机场","name":"Miami","state":"佛罗里达"}
+{"code":"HNL","chname":"火奴鲁鲁机场","name":"Honolulu","state":"夏威夷"}
+{"code":"OMA","chname":"奥马哈机场","name":"Omaha","state":"内布瑞斯卡"}

@@ -6,3 +6,4 @@ class DmozItem(scrapy.Item):
     desc = scrapy.Field()
     price = scrapy.Field()
     name = scrapy.Field()
+    date= scrapy.Field()
