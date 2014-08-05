@@ -8,7 +8,7 @@ class kawSpidersingle(scrapy.Spider):
     def start_requests(self):
         # a=AirData()
         # datas=a.UsaData()
-        yield scrapy.FormRequest('http://www.kayak.com/flights/LGB-BUR/2014-08-16',callback=self.ress)
+        yield scrapy.FormRequest('http://www.kayak.com/flights/SJC-SNA/2014-08-21',callback=self.ress)
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[2]['code']+'/2014-08-26')    
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[3]['code']+'/2014-08-26')    
         # for i in range(16,33):
