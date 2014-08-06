@@ -11,7 +11,7 @@ class kawSpider(scrapy.Spider):
 
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[2]['code']+'/2014-08-26')    
         # start_urls.append('http://www.kayak.com/flights/'+datas[1]['code']+'-'+datas[3]['code']+'/2014-08-26')    
-        for i in range(16,33):
+        for i in range(25,27):
             date='/2014-08-'+str(i)
             if (i==32):
                 date='/2014-09-01'

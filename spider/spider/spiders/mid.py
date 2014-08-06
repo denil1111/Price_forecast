@@ -19,6 +19,7 @@ class WebkitDownloader( object ):
                 gtk.main()
                 gtk.main()
                 gtk.main()
+                gtk.main()
                 js = jswebkit.JSContext( webview.get_main_frame().get_global_context() )
                 renderedBody = str( js.EvaluateScript( 'document.body.innerHTML' ) )
 

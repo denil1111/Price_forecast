@@ -27,8 +27,51 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-    .form-control{
+   /* .form-control{
       margin-bottom:10px
+    }*/
+    html {
+            background: url(/css/2.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+    body{
+      font-size: 16px;
+      font-family: "Open Sans",serif;
+      background: transparent;
+    }
+
+    h1 {
+            font-family: "Abel", Arial, sans-serif;
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+
+    .margin-base-vertical{
+      magin:40px 0;
+    }
+
+    .panel {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+    .form_hide{ /*. is class name # is id name*/
+        left :10%;
+        opacity: 0;
+        z-index: -1 ;
+        display: none;
+      }
+    .flight-content{
+    color: #888;
+    background-color: whiteSmoke;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    border-left: 4px solid #FFA07A;
     }
     </style>
   </head>
@@ -45,18 +88,68 @@
         <h3 class="text-muted">Griggles Flight</h3>
       </div>
 
-      <div class="jumbotron">
+      <div class="jumbotron panel">
         <h1>choose your flight</h1>
-          <form class="form-signin" role="form">
-          <h2 class="form-signin-heading">choose your flight</h2>
+          <form class="form-horizontal" role="form">
+             <!-- <div class="form-group">
+                    <p class="form-control-static">Departure</p>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="departure_sel" class="col-sm-2 control-label">Departure</label>
+                    <div class="col-sm-10">
+                      <select id="departure_sel" class="form-control" name="departure">
+                        <option>Beijing</option>
+                        <option>Shanghai</option>
+                        <option>Xian</option>
+                        <option>Guangzhou</option>
+                        <option>Hongkon</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="departure_sel" class="col-sm-2 control-label">Arrival</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="arrival">
+                        <option>Beijing</option>
+                        <option>Shanghai</option>
+                        <option>Xian</option>
+                        <option>Guangzhou</option>
+                        <option>Hongkon</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="datesel" class="col-sm-2 control-label">Dep Time</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="arrival">
+                        <option>2014-08-16</option>
+                        <option>2014-08-17</option>
+                        <option>2014-08-18</option>
+                        <option>2014-08-19</option>
+                        <option>2014-08-20</option>
+                        <option>2014-08-21</option>
+                        <option>2014-08-22</option>
+                        <option>2014-08-23</option>
+                        <option>2014-08-24</option>
+                        <option>2014-08-25</option>
+                        <option>2014-08-26</option>
+                        <option>2014-08-27</option>
+                        <option>2014-08-28</option>
+                        <option>2014-08-29</option>
+                        <option>2014-08-30</option>
+                        <option>2014-08-31</option>
+                        <option>2014-09-01</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button class="btn btn-lg btn-success" role="button" type="submit">search</button>
+                  <!-- <button type="submit" class="btn btn-warning btn-sm">Submit</button> -->
+              </form>
+          <!-- <h2 class="form-signin-heading">choose your flight</h2>
           <input type="text" class="form-control" placeholder="Arrival" required autofocus>
           <input type="password" class="form-control" placeholder="Depart" required>
-          <!-- <div class="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div> -->
-          <button class="btn btn-lg btn-success" role="button" type="submit">search</button>
+          <button class="btn btn-lg btn-success" role="button" type="submit">search</button> -->
         </form>
       </div>
 <!-- 
