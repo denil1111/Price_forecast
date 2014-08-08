@@ -20,6 +20,7 @@ class AirData:
 		file=open("airchina")
 		self.datas=[]
 		for line in file:
+			# print line
 			# print (line)
 			# print type(line)
 			data=json.loads(line)

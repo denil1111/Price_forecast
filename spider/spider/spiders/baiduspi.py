@@ -3,7 +3,7 @@ from spider.items import DmozItem
 from datahandle import AirData
 class kawSpider(scrapy.Spider):
     name = "kaw"
-    DOWNLOAD_DELAY = 2
+    allowed_domains = ["www.kaya.com"]
     # start_urls=[]
     def start_requests(self):
         a=AirData()

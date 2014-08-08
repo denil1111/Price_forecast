@@ -16,8 +16,8 @@ class DmozSpider(scrapy.Spider):
 
             formdata={
             'cond.tripType':'OW',
-            'cond.depCode_reveal':'JFK',
-            'cond.depCode':'JFK',
+            'cond.depCode_reveal':'PKG',
+            'cond.depCode':'PKG',
             'cond.arrCode_reveal':'LAX',
             'cond.arrCode':'LAX',
             'cond.routeType':'3',

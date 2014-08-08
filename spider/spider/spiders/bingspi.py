@@ -11,25 +11,27 @@ class BingSpider(scrapy.Spider):
         # cityname2=cityname2.encode('gb2312')
         a=AirData()
         datas=a.UsaData()
-        for info in datas:
-            print (info)
+        for info1 in datas:
+            for info2 in datas:
+                if (info1!=info2):
+                    print (info1)
 
-            formdata={
-            'cond.tripType':'OW',
-            'cond.depCode_reveal':'JFK',
-            'cond.depCode':'JFK',
-            'cond.arrCode_reveal':'LAX',
-            'cond.arrCode':'LAX',
-            'cond.routeType':'3',
-            'depDate':'2014-07-29',
-            'depRtData':'2014-8-26',
-            }
-            print('========================================')
-            print (formdata)
-            yield scrapy.FormRequest("http://www.bing.com/flights/search",
-                            formdata=formdata,
-                            callback=self.logged_in,
-                            dont_filter=True)
+                    formdata={
+                    'cond.tripType':'OW',
+                    'cond.depCode_reveal':info1['code'],
+                    'cond.depCode':info1['code'],
+                    'cond.arrCode_reveal':info2['code'],
+                    'cond.arrCode':info2['code'],
+                    'cond.routeType':'3',
+                    'depDate':'2014-07-29',
+                    'depRtData':'2014-8-26',
+                    }
+                    print('========================================')
+                    print (formdata)
+                    yield scrapy.FormRequest("http://www.bing.com/flights/search",
+                                    formdata=formdata,
+                                    callback=self.logged_in,
+                                    dont_filter=True)
 
     def logged_in(self, response):
         print 1
