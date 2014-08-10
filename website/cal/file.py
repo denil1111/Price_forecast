@@ -16,7 +16,7 @@ def yunxing(strdep,strarr,mon,day):
 	arrival_str=strarr
 	leavemonth=mon
 	leaveday=day
-	file=open("example.json")
+	file=open("cal/example.json")
 	datas=[]
 	pricelist=[]
 	day=0
