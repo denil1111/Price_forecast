@@ -20,7 +20,7 @@
    <meta name="keywords" content="China Eastern airline,discount,special offer,ticket,fare,book online,cheap fare,china,shanghai,beijing,guangzhou,hongkong," />
    <meta name="description" content="China Eastern Airlines offer flights from Europe to over one hundred China destinations as well as onward destinations in Asia and Australia." />
    <link type="image/x-icon" href="/muovc/resource/images/favicon.ico" rel="Shortcut Icon" />
-   <link type="text/css" href="/muovc/resource/css/main.css" rel="stylesheet" /> 
+   <link type="text/css" href="/muovc/resource/css/main.css" rel="stylesheet" />
    <link type="text/css" href="/muovc/resource/css/new-main.css" rel="stylesheet" />
    <link type="text/css" href="/muovc/resource/en_US/css/css.css" rel="stylesheet" />
    <link type="text/css" href="/muovc/resource/css/flightbooking.css" rel="stylesheet" />
@@ -33,26 +33,26 @@
 <script type='text/javascript' src='/muovc/resource/js/j.index.js'></script>
 
 
-   <script type="text/javascript" src="/muovc/resource/js/booking/j.flightselect.js"></script>
+   <script type="text/javascript" src="/muovc/resource/js/booking/j.tax.flightselect.js"></script>
    <script type="text/javascript" src="/muovc/resource/js/public/jquery.calendar.js"></script>
    <script type="text/javascript" src="/muovc/resource/js/public/jquery.sortr.js"></script>
    <script type="text/javascript" src="/muovc/resource/js/booking/j.calendar.selectflight.js"></script>
    <script type="text/javascript">
     $(function()
     {
-        $('.calendar').calendar({'Currency':'$','dep':'CKG','arr':'TSN','CurrencyCode':'USD'});
+        $('.calendar').calendar({'Currency':'$','dep':'XIY','arr':'CKG','CurrencyCode':'USD'});
         $('.calendar').calendarSelectflight({
           'action':'/muovc/front/reservation/flight-search!doFlightSearchForAjax.shtml',
           'replace':'.flight_table',
-          'depCode':'CKG',
-          'arrCode':'TSN',
+          'depCode':'XIY',
+          'arrCode':'CKG',
           'tripType':'OW',
           'cabinRank':'ECONOMY'
         });
         $('.btn_sort_time').sortr({'selectr':'.flight_table tbody','sortkey':'.sort_time'});
         $('.btn_sort_fare').sortr({'selectr':'.flight_table tbody','sortkey':'.sort_fare'});
         
-        $("#popup_price .cabin").find("input[type='radio']").live('click',function(){
+		$("#popup_price .cabin").find("input[type='radio']").live('click',function(){
 			$("#price_info").show();
 		});
 		
@@ -60,7 +60,8 @@
 			$(".body_mask,.popup_iframe,#popup_price").remove();
 		});
     });
-
+    
+    
     function allPrice(flightSeq){
 			var sMask_Width = $(window).width();
 			var sLeft = (sMask_Width/2)-330;
@@ -112,6 +113,7 @@
 	            }
 	        });
 		}
+    
       var resource = {
           'page':{
             'flight':{
@@ -203,7 +205,7 @@ $("#idSlider").livequery(function(){
               From
             </div>
             <div class="col2">
-              <input type="text" name="cond.depCode" value="CKG" class="input" />
+              <input type="text" name="cond.depCode" value="XIY" class="input" />
             </div>
           </div>
           <div class="row">
@@ -211,7 +213,7 @@ $("#idSlider").livequery(function(){
               To
             </div>
             <div class="col2">
-              <input type="text" name="cond.arrCode" value="TSN" class="input" />
+              <input type="text" name="cond.arrCode" value="CKG" class="input" />
             </div>
           </div>
           <div class="row">
@@ -345,9 +347,9 @@ $("#idSlider").livequery(function(){
        <div class="flight_booking">
         <div class="routing">
           <span>Select Departing Flight: </span>
-          Chongqing
+          Xi an Xianyang Airport
           <img src="/muovc/resource/images/icon_arrow_go.gif" />
-          Tianjin
+          Chongqing
 			  <div class="orderby">
 				  <div class="text">
 				   Time
@@ -384,8 +386,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-24</span><span>Aug.24</span><span>Sun</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -398,8 +400,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-25</span><span>Aug.25</span><span>Mon</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -412,8 +414,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-26</span><span>Aug.26</span><span>Tue</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -425,8 +427,8 @@ $("#idSlider").livequery(function(){
      <li class="active">
       <a><span class="selectDate" style="display: none">2014-08-27</span><span>Aug.27</span><span>Wed</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -440,8 +442,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-28</span><span>Aug.28</span><span>Thu</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -454,8 +456,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-29</span><span>Aug.29</span><span>Fri</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -468,8 +470,8 @@ $("#idSlider").livequery(function(){
      <li>
       <a><span class="selectDate" style="display: none">2014-08-30</span><span>Aug.30</span><span>Sat</span> 
         
-         <b> - </b>
         
+         <b>$170.5</b>
         
         </a>
      </li>
@@ -532,17 +534,403 @@ $("#idSlider").livequery(function(){
       </tr>
     </thead>
     
+      
+        <tbody>
+          <tr class="booking">
+            <td>
+              <img src="/muovc/resource/images/icon_flight_depart.gif" />
+              <span class="sort_fare hidden">143.0</span>
+              <span class="sort_time hidden">08:05</span>
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_blue.gif" />
+              08:05 Aug.27
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_red.gif" />
+              09:15 Aug.27
+            </td>
+            <td>
+              <!-- 区分是飞机还是高铁的图标 -->
+              
+                
+                
+                   <img src="/muovc/resource/images/airline-logo/MU.gif" />
+                
+              
+              MU2261
+            </td>
+            <td>
+              Xi an Xianyang Airport
+
+            </td>
+            <td>
+              Chongqing
+
+            </td>
+            
+            <td rowspan="1" class="price center">
+                
+                   
+                   
+                       <span> - </span>
+                   
+                
+             </td>
+             
+             <td rowspan="1" class="price center">
+                
+                   
+                      <input type="radio" name="flight_select" value="2|Y|ALL"/>$<span class="price">170.5</span>
+                      
+
+                      <!-- 票价和税等等隐藏信息 -->
+                      
+
+
+   
+   
+
+   
+   
+     
+   
+
+
+	
+	
+		<span class="tkt_amt" style="display:none">143</span>
+		<span class="tax_amt" style="display:none">27.5</span>
+	
+
+	
+                   
+                   
+                
+               </td> 
+               <td><span class="more popup_price_detail" onclick="allPrice(2)">more</span>
+               </td>
+          </tr>
+          <tr class="detail">
+            <td colspan="10">
+              
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <!-- 普通价免费行礼额 -->
+  
+   
+  <!-- 最低价免费行礼额 -->
+  
+  
+     
+     
+        
+        
+           
+        
+     
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        XIAN
+
+        ,
+        CHINA
+
+        -
+        Xi an Xianyang Airport
+
+        T3
+      </li>
+      <li>
+        To
+        :
+        CHONGQING
+
+        ,
+        CHINA
+
+        -
+        Chongqing
+
+        T2
+      </li>
+      <li>
+        Aircraft
+        :
+        320
+      </li>
+      <li>
+        Stopover:no
+      </li>
+      <li>
+         Class 
+         <span class="Economy"><strong></strong></span>
+         <span class="Lowest"><strong>Y</strong></span>
+      </li>
+    </ul>
+  
+  <ul>
+		<li>
+			Free baggage allowance
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>20KG</strong></span> 
+		</li>
+	</ul>
+  <ul>
+    <li>
+      Total time:
+      1hours 10minutes
+    </li>
+  </ul>
+  <ul>
+		<li>
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduleddeparture time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+		</li>
+	</ul>
+
+            </td>
+          </tr>
+        </tbody>
+      
+    
+      
+        <tbody>
+          <tr class="booking">
+            <td>
+              <img src="/muovc/resource/images/icon_flight_depart.gif" />
+              <span class="sort_fare hidden">143.0</span>
+              <span class="sort_time hidden">20:45</span>
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_blue.gif" />
+              20:45 Aug.27
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_red.gif" />
+              22:00 Aug.27
+            </td>
+            <td>
+              <!-- 区分是飞机还是高铁的图标 -->
+              
+                
+                
+                   <img src="/muovc/resource/images/airline-logo/MU.gif" />
+                
+              
+              MU2267
+            </td>
+            <td>
+              Xi an Xianyang Airport
+
+            </td>
+            <td>
+              Chongqing
+
+            </td>
+            
+            <td rowspan="1" class="price center">
+                
+                   
+                   
+                       <span> - </span>
+                   
+                
+             </td>
+             
+             <td rowspan="1" class="price center">
+                
+                   
+                      <input type="radio" name="flight_select" value="15|Y|ALL"/>$<span class="price">170.5</span>
+                      
+
+                      <!-- 票价和税等等隐藏信息 -->
+                      
+
+
+   
+   
+
+   
+   
+     
+   
+
+
+	
+	
+		<span class="tkt_amt" style="display:none">143</span>
+		<span class="tax_amt" style="display:none">27.5</span>
+	
+
+	
+                   
+                   
+                
+               </td> 
+               <td><span class="more popup_price_detail" onclick="allPrice(15)">more</span>
+               </td>
+          </tr>
+          <tr class="detail">
+            <td colspan="10">
+              
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <!-- 普通价免费行礼额 -->
+  
+   
+  <!-- 最低价免费行礼额 -->
+  
+  
+     
+     
+        
+        
+           
+        
+     
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        XIAN
+
+        ,
+        CHINA
+
+        -
+        Xi an Xianyang Airport
+
+        T3
+      </li>
+      <li>
+        To
+        :
+        CHONGQING
+
+        ,
+        CHINA
+
+        -
+        Chongqing
+
+        T2
+      </li>
+      <li>
+        Aircraft
+        :
+        325
+      </li>
+      <li>
+        Stopover:no
+      </li>
+      <li>
+         Class 
+         <span class="Economy"><strong></strong></span>
+         <span class="Lowest"><strong>Y</strong></span>
+      </li>
+    </ul>
+  
+  <ul>
+		<li>
+			Free baggage allowance
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>20KG</strong></span> 
+		</li>
+	</ul>
+  <ul>
+    <li>
+      Total time:
+      1hours 15minutes
+    </li>
+  </ul>
+  <ul>
+		<li>
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduled departure time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+		</li>
+	</ul>
+
+            </td>
+          </tr>
+        </tbody>
+      
+    
   </table>
 
           </div>
-          <div><div id="total_price_div" style="display:none" class="flight_price">$<span id="total_price"></span></div></div>
-          
-          	<div class="clear"></div>
-          	<div class="warnMsg">
-		        <label>！</label>
-          		<span>We apologize that there are no sufficient seats on #Chongqing Tianjin# segment of your searched flight.  Please change the search options. Thank you for your cooperation!</span>
-         	</div>
-          
+          <!-- 票价和税信息 -->
+          <div id="total_price_div" style="display: none" class="flight_price priceHasTax">
+	<div class="clear"></div>
+	<ul class="hasTaxPrice">
+		<li>
+			<span id="total_tkt_amt" rel="total_tkt_amt"  ></span>
+		</li>
+		
+		<li class="taxLine" >
+			<span id="total_tax_amt" rel="total_tax_amt"  ></span>&nbsp;<a href="javascript:void(0)" rel="show_ow_tax" style="font-weight:normal;">(?)</a>
+		</li>
+		<li>	
+			<span id="total_price" rel="total_price"></span> 
+		</li>
+	</ul>
+	<ul class="hasTaxMsg"  >
+		<li>Fare: $</li>
+		
+		<li class="taxLine"><label>+</label>Tax & Fees: $</li>
+		<li>Total Fare: $</li>
+	</ul>
+	<!-- <ul class="hasTaxPrice">
+		<li>
+			<span id="total_tkt_amt" rel="total_tkt_amt"></span>
+		</li>
+		
+		<li class="taxLine">
+			<span id="total_tax_amt" rel="total_tax_amt"></span>&nbsp;<a href="javascript:void(0)" rel="show_ow_tax">(?)</a>
+		</li>
+		<li>	
+			<span id="total_price" rel="total_price"></span>
+		</li>
+	</ul>
+	<ul class="hasTaxMsg">
+		<li>Fare: $</li>
+		
+		<li class="taxLine"><label>+</label>Tax & Fees: $</li>
+		<li>Total Fare: $</li>
+	</ul> -->
+	<div class="clear"></div>
+</div>
+<input type="hidden" id="total_currency" value="USD">
           <div>
           
           
