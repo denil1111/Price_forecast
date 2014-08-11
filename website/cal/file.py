@@ -48,6 +48,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 	day=len(pricelist)
 	depature=int(date[8:])
 	today=int(present[8:])
+	print pricelist
 	if pricelist[day-1]<pricelist[day-2]:
 		ans="buy"
 		mark=1
