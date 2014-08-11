@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.template import Context, loader, RequestContext
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
+import datetime
+import sys
+sys.path.append('cal')
+from file import yunxing
 import datahandle
 def index(req):
 	Rdata=datahandle.AirData()
@@ -19,9 +23,15 @@ def index(req):
 				if (code==air['code']):
 					return air
 		print req.POST['departure']
+		today=datetime.date.today()
+		today=today.strftime("%Y-%m-%d")
+		print (today)
+		res=yunxing(req.POST['departure'],req.POST['arrival'],req.POST['date'],today)
 		c = {'dep':findair(req.POST['departure']),
 			 'arr':findair(req.POST['arrival']),
-			 'date':req.POST['date']
+			 'date':req.POST['date'],
+			 'sug':res['ans'],
+			 'price':res['price'],
 			}
 		c.update(csrf(req))
 		print (c)

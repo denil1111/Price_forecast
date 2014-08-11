@@ -89,9 +89,30 @@
 
       <div class="jumbotron panel">
         <h1>The Result</h1>
-        <p>Your flight is from {{arr.airporten}} to {{dep.airporten}} at {{date}}</p>
-        <p>the price is</p>
-        <p>Suggestion:Buy</p> 
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Departure</th>
+              <td>{{dep.airporten}}</td>
+            </tr>
+            <tr>
+              <th>arrival</th>
+              <td>{{arr.airporten}}</td>
+            </tr>
+            <tr>
+              <th>Departure date</th>
+              <td>{{date}}</td>
+            </tr>
+            <tr>
+              <th>Today's Price</th>
+              <td>{{price}}</td>
+            </tr>
+            <tr>
+              <th>Suggestion</th>
+              <td>{{sug}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="footer">
         <p>&copy; Griggles2014</p>

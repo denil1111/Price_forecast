@@ -42,7 +42,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 	for j in range(0,4):
 		filename="result"
 		filename=filename+str(mon)+str(day)+".json"
-		file=open(filename)
+		file=open('../spiderchina/datas/'+filename)
 		pricelist=[]
 		for line in file:
 			#print(line[:-2])
@@ -72,6 +72,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 		return {'ans':ans,'price':"none"}
 	depature=int(date[8:])
 	today=int(present[8:])
+	print pricelist
 	if pricelist[day-1]<pricelist[day-2]:
 		ans="buy"
 		mark=1
