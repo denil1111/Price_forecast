@@ -25,7 +25,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 	for j in range(0,4):
 		filename="result"
 		filename=filename+str(mon)+str(day)+".json"
-		file=open(filename)
+		file=open('../spiderchina/datas/'+filename)
 		pricelist=[]
 		for line in file:
 			#print(line[:-2])

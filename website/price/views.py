@@ -26,7 +26,7 @@ def index(req):
 		today=datetime.date.today()
 		today=today.strftime("%Y-%m-%d")
 		print (today)
-		res=yunxing(req.POST['departure'],req.POST['arrival'],8,16)
+		res=yunxing(req.POST['departure'],req.POST['arrival'],req.POST['date'],today)
 		c = {'dep':findair(req.POST['departure']),
 			 'arr':findair(req.POST['arrival']),
 			 'date':req.POST['date'],
