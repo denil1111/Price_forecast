@@ -1,4 +1,5 @@
 import json
+import pylab
 
 def flucturate(a,b):
 	if b>a:
@@ -14,6 +15,22 @@ def flucturate(a,b):
 def yunxing(strdep,strarr,datestr,todaystr):
 	depature_str=strdep
 	arrival_str=strarr
+	if ((depature_str=="PEK") and (arrival_str=="NAY")):
+		ans="none"
+		return {'ans':ans,'price':"none"}
+	if ((depature_str=="NAY") and (arrival_str=="PEK")):
+		ans="none"
+		return {'ans':ans,'price':"none"}
+	if ((depature_str=="PVG") and (arrival_str=="SHA")):
+		ans="none"
+		return {'ans':ans,'price':"none"}
+	if ((depature_str=="SHA") and (arrival_str=="PVG")):
+		ans="none"
+		return {'ans':ans,'price':"none"}
+	if depature_str==arrival_str:
+		ans="none"
+		return {'ans':ans,'price':"none"}
+	
 	date=datestr
 	present=todaystr
 	mon=8
@@ -40,12 +57,19 @@ def yunxing(strdep,strarr,datestr,todaystr):
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
 				#factor2=factor2+1
 				if (datas[i]['price'][4]!='<b> - </b>'):
-					lin_float=float(datas[i]['price'][4][4:-4])
+					lin_float=float(datas[i]['price'][6][4:-4])
 					pricelist.append(lin_float)
-	
-
+				if (datas[i]['price'][4]=='<b> - </b>'):
+					ans="none"
+					return {'ans':ans,'price':"none"}
+	#pylab.plot(pricelist)
+	#pylab.show()
+	k=0
 	mark=0
 	day=len(pricelist)
+	if (day==0):
+		ans="none"
+		return {'ans':ans,'price':"none"}
 	depature=int(date[8:])
 	today=int(present[8:])
 	if pricelist[day-1]<pricelist[day-2]:
@@ -66,7 +90,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 				mark=1
 	if (mark==0):
 		ans="wait"
-	return {'ans':ans,'price':pricelist[day-1]}
+	return {'ans':ans,'price':"$"+str(pricelist[day-1])}
 
 
 #print(pricelist)
