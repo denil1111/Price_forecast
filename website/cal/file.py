@@ -2,7 +2,7 @@ import json
 import pylab
 
 def flucturate(a,b):
-	if b>a:
+	if b>=a:
 		c=b-a
 		if c*100<a:
 			return 0
@@ -42,7 +42,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 	for j in range(0,4):
 		filename="result"
 		filename=filename+str(mon)+str(day)+".json"
-		file=open('../spiderchina/datas/'+filename)
+		file=open(filename)
 		pricelist=[]
 		for line in file:
 			#print(line[:-2])
@@ -53,15 +53,14 @@ def yunxing(strdep,strarr,datestr,todaystr):
 		day=day+1
 	for i in range(0,totalinfo):
 		if (datas[i]['date']==date):
-			#factor=factor+1
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
-				#factor2=factor2+1
 				if (datas[i]['price'][4]!='<b> - </b>'):
 					lin_float=float(datas[i]['price'][6][4:-4])
 					pricelist.append(lin_float)
 				if (datas[i]['price'][4]=='<b> - </b>'):
 					ans="none"
 					return {'ans':ans,'price':"none"}
+	print(pricelist)
 	#pylab.plot(pricelist)
 	#pylab.show()
 	k=0
@@ -72,7 +71,6 @@ def yunxing(strdep,strarr,datestr,todaystr):
 		return {'ans':ans,'price':"none"}
 	depature=int(date[8:])
 	today=int(present[8:])
-	print pricelist
 	if pricelist[day-1]<pricelist[day-2]:
 		ans="buy"
 		mark=1
@@ -83,7 +81,7 @@ def yunxing(strdep,strarr,datestr,todaystr):
 				mark=1
 	for i in range(0,day-2):
 		if flucturate(pricelist[i],pricelist[i+1])!=0:
-			for j in range(i,day):
+			for j in range(i+1,day):
 				if flucturate(pricelist[j],pricelist[day-1])!=0:
 					k=1
 			if k==0:
