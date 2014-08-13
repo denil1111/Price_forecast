@@ -40,12 +40,12 @@
    <script type="text/javascript">
     $(function()
     {
-        $('.calendar').calendar({'Currency':'$','dep':'XIY','arr':'HGH','CurrencyCode':'USD'});
+        $('.calendar').calendar({'Currency':'$','dep':'XIY','arr':'KMG','CurrencyCode':'USD'});
         $('.calendar').calendarSelectflight({
           'action':'/muovc/front/reservation/flight-search!doFlightSearchForAjax.shtml',
           'replace':'.flight_table',
           'depCode':'XIY',
-          'arrCode':'HGH',
+          'arrCode':'KMG',
           'tripType':'OW',
           'cabinRank':'ECONOMY'
         });
@@ -213,7 +213,7 @@ $("#idSlider").livequery(function(){
               To
             </div>
             <div class="col2">
-              <input type="text" name="cond.arrCode" value="HGH" class="input" />
+              <input type="text" name="cond.arrCode" value="KMG" class="input" />
             </div>
           </div>
           <div class="row">
@@ -349,7 +349,7 @@ $("#idSlider").livequery(function(){
           <span>Select Departing Flight: </span>
           Xi an Xianyang Airport
           <img src="/muovc/resource/images/icon_arrow_go.gif" />
-          Hangzhou
+          Kunming ChangShui
 			  <div class="orderby">
 				  <div class="text">
 				   Time
@@ -387,7 +387,7 @@ $("#idSlider").livequery(function(){
       <a><span class="selectDate" style="display: none">2014-08-29</span><span>Aug.29</span><span>Fri</span> 
         
         
-         <b>$229.3</b>
+         <b>$253.5</b>
         
         </a>
      </li>
@@ -401,7 +401,7 @@ $("#idSlider").livequery(function(){
       <a><span class="selectDate" style="display: none">2014-08-30</span><span>Aug.30</span><span>Sat</span> 
         
         
-         <b>$229.3</b>
+         <b>$253.5</b>
         
         </a>
      </li>
@@ -415,7 +415,7 @@ $("#idSlider").livequery(function(){
       <a><span class="selectDate" style="display: none">2014-08-31</span><span>Aug.31</span><span>Sun</span> 
         
         
-         <b>$229.3</b>
+         <b>$253.5</b>
         
         </a>
      </li>
@@ -428,7 +428,7 @@ $("#idSlider").livequery(function(){
       <a><span class="selectDate" style="display: none">2014-09-01</span><span>Sep.01</span><span>Mon</span> 
         
         
-         <b>$229.3</b>
+         <b>$253.5</b>
         
         </a>
      </li>
@@ -539,16 +539,16 @@ $("#idSlider").livequery(function(){
           <tr class="booking">
             <td>
               <img src="/muovc/resource/images/icon_flight_depart.gif" />
-              <span class="sort_fare hidden">183.0</span>
-              <span class="sort_time hidden">07:45</span>
+              <span class="sort_fare hidden">208.0</span>
+              <span class="sort_time hidden">15:05</span>
             </td>
             <td>
               <img src="/muovc/resource/images/icon_time_blue.gif" />
-              07:45 Sep.01
+              15:05 Sep.01
             </td>
             <td>
               <img src="/muovc/resource/images/icon_time_red.gif" />
-              09:55 Sep.01
+              17:10 Sep.01
             </td>
             <td>
               <!-- 区分是飞机还是高铁的图标 -->
@@ -558,14 +558,14 @@ $("#idSlider").livequery(function(){
                    <img src="/muovc/resource/images/airline-logo/MU.gif" />
                 
               
-              MU2291
+              MU2207
             </td>
             <td>
               Xi an Xianyang Airport
 
             </td>
             <td>
-              Hangzhou
+              Kunming ChangShui
 
             </td>
             
@@ -581,7 +581,7 @@ $("#idSlider").livequery(function(){
              <td rowspan="1" class="price center">
                 
                    
-                      <input type="radio" name="flight_select" value="0|Y|ALL"/>$<span class="price">229.3</span>
+                      <input type="radio" name="flight_select" value="6|Y|ALL"/>$<span class="price">253.5</span>
                       
 
                       <!-- 票价和税等等隐藏信息 -->
@@ -599,8 +599,8 @@ $("#idSlider").livequery(function(){
 
 	
 	
-		<span class="tkt_amt" style="display:none">183</span>
-		<span class="tax_amt" style="display:none">46.3</span>
+		<span class="tkt_amt" style="display:none">208</span>
+		<span class="tax_amt" style="display:none">45.5</span>
 	
 
 	
@@ -608,7 +608,7 @@ $("#idSlider").livequery(function(){
                    
                 
                </td> 
-               <td><span class="more popup_price_detail" onclick="allPrice(0)">more</span>
+               <td><span class="more popup_price_detail" onclick="allPrice(6)">more</span>
                </td>
           </tr>
           <tr class="detail">
@@ -660,20 +660,548 @@ $("#idSlider").livequery(function(){
       <li>
         To
         :
-        HANGZHOU
+        KUNMING
 
         ,
         CHINA
 
         -
-        Hangzhou
+        Kunming ChangShui
 
         --
       </li>
       <li>
         Aircraft
         :
-        325
+        319
+      </li>
+      <li>
+        Stopover:no
+      </li>
+      <li>
+         Class 
+         <span class="Economy"><strong></strong></span>
+         <span class="Lowest"><strong>Y</strong></span>
+      </li>
+    </ul>
+  
+  <ul>
+		<li>
+			Free baggage allowance
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>20KG</strong></span> 
+		</li>
+	</ul>
+  <ul>
+    <li>
+      Total time:
+      2hours 5minutes
+    </li>
+  </ul>
+  <ul>
+		<li>
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduled departure time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+		</li>
+	</ul>
+
+            </td>
+          </tr>
+        </tbody>
+      
+    
+      
+        <tbody>
+          <tr class="booking">
+            <td>
+              <img src="/muovc/resource/images/icon_flight_depart.gif" />
+              <span class="sort_fare hidden">208.0</span>
+              <span class="sort_time hidden">15:05</span>
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_blue.gif" />
+              15:05 Sep.01
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_red.gif" />
+              17:10 Sep.01
+            </td>
+            <td>
+              <!-- 区分是飞机还是高铁的图标 -->
+              
+                
+                
+                   <img src="/muovc/resource/images/airline-logo/MU.gif" />
+                
+              
+              MU5975
+            </td>
+            <td>
+              Xi an Xianyang Airport
+
+            </td>
+            <td>
+              Kunming ChangShui
+
+            </td>
+            
+            <td rowspan="1" class="price center">
+                
+                   
+                   
+                       <span> - </span>
+                   
+                
+             </td>
+             
+             <td rowspan="1" class="price center">
+                
+                   
+                      <input type="radio" name="flight_select" value="7|Y|ALL"/>$<span class="price">253.5</span>
+                      
+
+                      <!-- 票价和税等等隐藏信息 -->
+                      
+
+
+   
+   
+
+   
+   
+     
+   
+
+
+	
+	
+		<span class="tkt_amt" style="display:none">208</span>
+		<span class="tax_amt" style="display:none">45.5</span>
+	
+
+	
+                   
+                   
+                
+               </td> 
+               <td><span class="more popup_price_detail" onclick="allPrice(7)">more</span>
+               </td>
+          </tr>
+          <tr class="detail">
+            <td colspan="10">
+              
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <!-- 普通价免费行礼额 -->
+  
+   
+  <!-- 最低价免费行礼额 -->
+  
+  
+     
+     
+        
+        
+           
+        
+     
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        XIAN
+
+        ,
+        CHINA
+
+        -
+        Xi an Xianyang Airport
+
+        T3
+      </li>
+      <li>
+        To
+        :
+        KUNMING
+
+        ,
+        CHINA
+
+        -
+        Kunming ChangShui
+
+        --
+      </li>
+      <li>
+        Aircraft
+        :
+        JET
+      </li>
+      <li>
+        Stopover:no
+      </li>
+      <li>
+         Class 
+         <span class="Economy"><strong></strong></span>
+         <span class="Lowest"><strong>Y</strong></span>
+      </li>
+    </ul>
+  
+  <ul>
+		<li>
+			Free baggage allowance
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>20KG</strong></span> 
+		</li>
+	</ul>
+  <ul>
+    <li>
+      Total time:
+      2hours 5minutes
+    </li>
+  </ul>
+  <ul>
+		<li>
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduled departure time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+		</li>
+	</ul>
+
+            </td>
+          </tr>
+        </tbody>
+      
+    
+      
+        <tbody>
+          <tr class="booking">
+            <td>
+              <img src="/muovc/resource/images/icon_flight_depart.gif" />
+              <span class="sort_fare hidden">208.0</span>
+              <span class="sort_time hidden">17:35</span>
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_blue.gif" />
+              17:35 Sep.01
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_red.gif" />
+              19:30 Sep.01
+            </td>
+            <td>
+              <!-- 区分是飞机还是高铁的图标 -->
+              
+                
+                
+                   <img src="/muovc/resource/images/airline-logo/MU.gif" />
+                
+              
+              MU5724
+            </td>
+            <td>
+              Xi an Xianyang Airport
+
+            </td>
+            <td>
+              Kunming ChangShui
+
+            </td>
+            
+            <td rowspan="1" class="price center">
+                
+                   
+                   
+                       <span> - </span>
+                   
+                
+             </td>
+             
+             <td rowspan="1" class="price center">
+                
+                   
+                      <input type="radio" name="flight_select" value="9|Y|ALL"/>$<span class="price">253.5</span>
+                      
+
+                      <!-- 票价和税等等隐藏信息 -->
+                      
+
+
+   
+   
+
+   
+   
+     
+   
+
+
+	
+	
+		<span class="tkt_amt" style="display:none">208</span>
+		<span class="tax_amt" style="display:none">45.5</span>
+	
+
+	
+                   
+                   
+                
+               </td> 
+               <td><span class="more popup_price_detail" onclick="allPrice(9)">more</span>
+               </td>
+          </tr>
+          <tr class="detail">
+            <td colspan="10">
+              
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <!-- 普通价免费行礼额 -->
+  
+   
+  <!-- 最低价免费行礼额 -->
+  
+  
+     
+     
+        
+        
+           
+        
+     
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        XIAN
+
+        ,
+        CHINA
+
+        -
+        Xi an Xianyang Airport
+
+        T3
+      </li>
+      <li>
+        To
+        :
+        KUNMING
+
+        ,
+        CHINA
+
+        -
+        Kunming ChangShui
+
+        --
+      </li>
+      <li>
+        Aircraft
+        :
+        73E
+      </li>
+      <li>
+        Stopover:no
+      </li>
+      <li>
+         Class 
+         <span class="Economy"><strong></strong></span>
+         <span class="Lowest"><strong>Y</strong></span>
+      </li>
+    </ul>
+  
+  <ul>
+		<li>
+			Free baggage allowance
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>20KG</strong></span> 
+		</li>
+	</ul>
+  <ul>
+    <li>
+      Total time:
+      1hours 55minutes
+    </li>
+  </ul>
+  <ul>
+		<li>
+			<span class="Economy"><strong></strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduled departure time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+		</li>
+	</ul>
+
+            </td>
+          </tr>
+        </tbody>
+      
+    
+      
+        <tbody>
+          <tr class="booking">
+            <td>
+              <img src="/muovc/resource/images/icon_flight_depart.gif" />
+              <span class="sort_fare hidden">208.0</span>
+              <span class="sort_time hidden">20:25</span>
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_blue.gif" />
+              20:25 Sep.01
+            </td>
+            <td>
+              <img src="/muovc/resource/images/icon_time_red.gif" />
+              22:35 Sep.01
+            </td>
+            <td>
+              <!-- 区分是飞机还是高铁的图标 -->
+              
+                
+                
+                   <img src="/muovc/resource/images/airline-logo/MU.gif" />
+                
+              
+              MU2264
+            </td>
+            <td>
+              Xi an Xianyang Airport
+
+            </td>
+            <td>
+              Kunming ChangShui
+
+            </td>
+            
+            <td rowspan="1" class="price center">
+                
+                   
+                   
+                       <span> - </span>
+                   
+                
+             </td>
+             
+             <td rowspan="1" class="price center">
+                
+                   
+                      <input type="radio" name="flight_select" value="12|Y|ALL"/>$<span class="price">253.5</span>
+                      
+
+                      <!-- 票价和税等等隐藏信息 -->
+                      
+
+
+   
+   
+
+   
+   
+     
+   
+
+
+	
+	
+		<span class="tkt_amt" style="display:none">208</span>
+		<span class="tax_amt" style="display:none">45.5</span>
+	
+
+	
+                   
+                   
+                
+               </td> 
+               <td><span class="more popup_price_detail" onclick="allPrice(12)">more</span>
+               </td>
+          </tr>
+          <tr class="detail">
+            <td colspan="10">
+              
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <!-- 普通价免费行礼额 -->
+  
+   
+  <!-- 最低价免费行礼额 -->
+  
+  
+     
+     
+        
+        
+           
+        
+     
+  
+  
+  
+    <ul>
+      
+      <li>
+        From
+        :
+        XIAN
+
+        ,
+        CHINA
+
+        -
+        Xi an Xianyang Airport
+
+        T3
+      </li>
+      <li>
+        To
+        :
+        KUNMING
+
+        ,
+        CHINA
+
+        -
+        Kunming ChangShui
+
+        --
+      </li>
+      <li>
+        Aircraft
+        :
+        73E
       </li>
       <li>
         Stopover:no
@@ -701,7 +1229,7 @@ $("#idSlider").livequery(function(){
   <ul>
 		<li>
 			<span class="Economy"><strong></strong></span>
-			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduleddeparture time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
+			<span class="Lowest"><strong>Up to 2 hours before the flight’s scheduled departure time, flight dates can be rescheduled at no charge, and tickets refunded with a service charge of 5% of the tickets face value. Within 2 hours of a flight’s scheduled departure time, flight dates can be rescheduled with a service charge of 5% of the tickets’ face value and tickets refunded with a service charge of 10% of the tickets’ face value. In the event that a flight date rescheduling service charge and a cabin upgrade fee occur simultaneously, the balance of both charges shall thereupon be paid in full. Regular tickets should be applied for refund within 13 months from the date of the first traveling ; occasional tickets(including regular ticket unused)  should be applied for refund within 13 months from  the date of  ticket issuing and late application is not allowed.</strong></span>
 		</li>
 	</ul>
 
@@ -715,16 +1243,16 @@ $("#idSlider").livequery(function(){
           <tr class="booking">
             <td>
               <img src="/muovc/resource/images/icon_flight_depart.gif" />
-              <span class="sort_fare hidden">183.0</span>
-              <span class="sort_time hidden">17:55</span>
+              <span class="sort_fare hidden">208.0</span>
+              <span class="sort_time hidden">22:30</span>
             </td>
             <td>
               <img src="/muovc/resource/images/icon_time_blue.gif" />
-              17:55 Sep.01
+              22:30 Sep.01
             </td>
             <td>
               <img src="/muovc/resource/images/icon_time_red.gif" />
-              19:50 Sep.01
+              00:30 Sep.02
             </td>
             <td>
               <!-- 区分是飞机还是高铁的图标 -->
@@ -734,14 +1262,14 @@ $("#idSlider").livequery(function(){
                    <img src="/muovc/resource/images/airline-logo/MU.gif" />
                 
               
-              MU2379
+              MU5726
             </td>
             <td>
               Xi an Xianyang Airport
 
             </td>
             <td>
-              Hangzhou
+              Kunming ChangShui
 
             </td>
             
@@ -757,7 +1285,7 @@ $("#idSlider").livequery(function(){
              <td rowspan="1" class="price center">
                 
                    
-                      <input type="radio" name="flight_select" value="10|Y|ALL"/>$<span class="price">229.3</span>
+                      <input type="radio" name="flight_select" value="19|Y|ALL"/>$<span class="price">253.5</span>
                       
 
                       <!-- 票价和税等等隐藏信息 -->
@@ -775,8 +1303,8 @@ $("#idSlider").livequery(function(){
 
 	
 	
-		<span class="tkt_amt" style="display:none">183</span>
-		<span class="tax_amt" style="display:none">46.3</span>
+		<span class="tkt_amt" style="display:none">208</span>
+		<span class="tax_amt" style="display:none">45.5</span>
 	
 
 	
@@ -784,7 +1312,7 @@ $("#idSlider").livequery(function(){
                    
                 
                </td> 
-               <td><span class="more popup_price_detail" onclick="allPrice(10)">more</span>
+               <td><span class="more popup_price_detail" onclick="allPrice(19)">more</span>
                </td>
           </tr>
           <tr class="detail">
@@ -836,20 +1364,20 @@ $("#idSlider").livequery(function(){
       <li>
         To
         :
-        HANGZHOU
+        KUNMING
 
         ,
         CHINA
 
         -
-        Hangzhou
+        Kunming ChangShui
 
         --
       </li>
       <li>
         Aircraft
         :
-        320
+        737
       </li>
       <li>
         Stopover:no
@@ -871,7 +1399,7 @@ $("#idSlider").livequery(function(){
   <ul>
     <li>
       Total time:
-      1hours 55minutes
+      2hours 0minutes
     </li>
   </ul>
   <ul>
