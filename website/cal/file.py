@@ -12,7 +12,7 @@ def flucturate(a,b):
 			return 0
 	return 1
 
-def yunxing(strdep,strarr,datestr,todaystr):
+def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	depature_str=strdep
 	arrival_str=strarr
 	if ((depature_str=="PEK") and (arrival_str=="NAY")):
@@ -39,7 +39,10 @@ def yunxing(strdep,strarr,datestr,todaystr):
 	factor2=0
 	totalinfo=0
 	datas=[]
-	for j in range(0,4):
+	file=open('../spiderchina/datas/num')
+	for line in file:
+		num=int(line)
+	for j in range(0,num):
 		filename="result"
 		filename=filename+str(mon)+str(day)+".json"
 		file=open('../spiderchina/datas/'+filename)
@@ -61,7 +64,8 @@ def yunxing(strdep,strarr,datestr,todaystr):
 					ans="none"
 					return {'ans':ans,'price':"none"}
 	print(pricelist)
-	#pylab.plot(pricelist)
+	pylab.plot(pricelist)
+	pylab.savefig(imgurl)
 	#pylab.show()
 	k=0
 	mark=0
