@@ -5,6 +5,7 @@ from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 import datetime
 import sys
+import os
 sys.path.append('cal')
 from file import yunxing
 import datahandle
@@ -15,6 +16,7 @@ def index(req):
 	print ("hahah")
 	t = loader.get_template('price/mainpage.html')
 	if (req.method == 'GET'):
+		os.system('price/templates/price/css/trend.png')
 		c = RequestContext(req,{'air':datas})
 		return HttpResponse(t.render(c))
 	else:
