@@ -58,7 +58,7 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 		if (datas[i]['date']==date):
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
 				if (datas[i]['price'][4]!='<b> - </b>'):
-					lin_float=float(datas[i]['price'][6][4:-4])
+					lin_float=float(datas[i]['price'][4][4:-4])
 					pricelist.append(lin_float)
 				if (datas[i]['price'][4]=='<b> - </b>'):
 					ans="none"
@@ -66,6 +66,7 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	print(pricelist)
 	pylab.plot(pricelist)
 	pylab.savefig(imgurl)
+	pylab.clf()
 	#pylab.show()
 	k=0
 	mark=0
@@ -94,8 +95,7 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	if (mark==0):
 		ans="wait"
 	return {'ans':ans,'price':"$"+str(pricelist[day-1])}
-
-
+	
 #print(pricelist)
 
 
