@@ -73,10 +73,6 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 		if (datas[i]['date']==date):
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
 				if (datas[i]['price'][5]!='<b> - </b>'):
-<<<<<<< HEAD
-					print(datas[i]['price'][5][4:-4])
-=======
->>>>>>> f5a0051b7809f4ba0662ed5641b2cdb3e3154098
 					lin_float=float(datas[i]['price'][5][4:-4])
 					pricelist.append(lin_float)
 				if (datas[i]['price'][5]=='<b> - </b>'):
