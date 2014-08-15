@@ -15,19 +15,35 @@ def flucturate(a,b):
 def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	depature_str=strdep
 	arrival_str=strarr
+	pricelist=[]
 	if ((depature_str=="PEK") and (arrival_str=="NAY")):
+		pylab.plot(pricelist)
+		pylab.savefig(imgurl)
+		pylab.clf()
 		ans="none"
 		return {'ans':ans,'price':"none"}
 	if ((depature_str=="NAY") and (arrival_str=="PEK")):
+		pylab.plot(pricelist)
+		pylab.savefig(imgurl)
+		pylab.clf()
 		ans="none"
 		return {'ans':ans,'price':"none"}
 	if ((depature_str=="PVG") and (arrival_str=="SHA")):
+		pylab.plot(pricelist)
+		pylab.savefig(imgurl)
+		pylab.clf()
 		ans="none"
 		return {'ans':ans,'price':"none"}
 	if ((depature_str=="SHA") and (arrival_str=="PVG")):
+		pylab.plot(pricelist)
+		pylab.savefig(imgurl)
+		pylab.clf()
 		ans="none"
 		return {'ans':ans,'price':"none"}
 	if depature_str==arrival_str:
+		pylab.plot(pricelist)
+		pylab.savefig(imgurl)
+		pylab.clf()
 		ans="none"
 		return {'ans':ans,'price':"none"}
 	
@@ -36,7 +52,7 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	mon=8
 	day=6
 	factor1=0
-	factor2=0
+	factor2=0	
 	totalinfo=0
 	datas=[]
 	file=open('../spiderchina/datas/num')
@@ -46,7 +62,6 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 		filename="result"
 		filename=filename+str(mon)+str(day)+".json"
 		file=open('../spiderchina/datas/'+filename)
-		pricelist=[]
 		for line in file:
 			#print(line[:-2])
 			totalinfo=totalinfo+1
@@ -57,13 +72,13 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 	for i in range(0,totalinfo):
 		if (datas[i]['date']==date):
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
-				if (datas[i]['price'][4]!='<b> - </b>'):
+				if (datas[i]['price'][5]!='<b> - </b>'):
 					lin_float=float(datas[i]['price'][4][4:-4])
 					pricelist.append(lin_float)
-				if (datas[i]['price'][4]=='<b> - </b>'):
-					ans="none"
+				if (datas[i]['price'][5]=='<b> - </b>'):
+					ans="There is no such flight today"
 					return {'ans':ans,'price':"none"}
-	print(pricelist)
+	#print(pricelist)
 	pylab.plot(pricelist)
 	pylab.savefig(imgurl)
 	pylab.clf()
@@ -76,6 +91,9 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 		return {'ans':ans,'price':"none"}
 	depature=int(date[8:])
 	today=int(present[8:])
+	if depature-today<=2:
+		ans="buy"
+		mark=1
 	if pricelist[day-1]<pricelist[day-2]:
 		ans="buy"
 		mark=1
