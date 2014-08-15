@@ -73,7 +73,8 @@ def yunxing(strdep,strarr,datestr,todaystr,imgurl):
 		if (datas[i]['date']==date):
 			if ((datas[i]['name'][0:3]==depature_str) and (datas[i]['name'][4:7]==arrival_str)):
 				if (datas[i]['price'][5]!='<b> - </b>'):
-					lin_float=float(datas[i]['price'][4][4:-4])
+					print(datas[i]['price'][5][4:-4])
+					lin_float=float(datas[i]['price'][5][4:-4])
 					pricelist.append(lin_float)
 				if (datas[i]['price'][5]=='<b> - </b>'):
 					ans="There is no such flight today"

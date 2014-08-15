@@ -113,7 +113,11 @@
             </tr>
             <tr>
               <th>Trend</th>
+              {% if price != "none" %}
               <td><img width="70%" height="40%"src="/css/trend.png"></img></td>
+              {% else %}
+              <td>none</td>
+              {% endif %}
             </tr>
           </tbody>
         </table>
